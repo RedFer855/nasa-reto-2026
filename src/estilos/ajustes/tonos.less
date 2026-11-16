@@ -1,0 +1,23 @@
+.tono-claro() {
+  --texto: @tinta;
+  --texto-suave: @tinta-suave;
+  --acento: @cobalto;
+  --acento-fuerte: @ultramar;
+  --superficie: fade(@papel, 84%);
+  --superficie-fuerte: @papel;
+  --borde: fade(@ultramar, 18%);
+  --borde-fuerte: fade(@ultramar, 45%);
+  --sobre-acento: @papel;
+}
+
+.tono-oscuro() {
+  --texto: @papel;
+  --texto-suave: @papel-suave;
+  --acento: @cielo;
+  --acento-fuerte: mix(@cielo, @papel, 70%);
+  --superficie: fade(@tinta, 62%);
+  --superficie-fuerte: fade(@tinta, 86%);
+  --borde: fade(@cielo, 22%);
+  --borde-fuerte: fade(@cielo, 55%);
+  --sobre-acento: @tinta;
+}

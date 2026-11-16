@@ -1,0 +1,6 @@
+{{#if @root.demo.disponible}}
+<a class="boton boton--primario{{#if corto}} boton--compacto{{/if}}" href="{{@root.demo.url}}" target="_blank" rel="noopener" data-boton-demo>
+  <span class="boton__largo">{{@root.demo.probar}}</span>
+  {{#if corto}}<span class="boton__corto" aria-hidden="true">{{@root.demo.probarCorto}}</span>{{/if}}
+</a>
+{{/if}}

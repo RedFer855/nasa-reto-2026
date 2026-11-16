@@ -1,0 +1,13 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.cierre.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo cierre__titulo" id="{{id}}-titulo">{{@root.cierre.titulo}}</h2>
+  </header>
+
+  <div class="cierre">
+    <p class="cierre__cuerpo">{{@root.cierre.cuerpo}}</p>
+    <div class="cierre__accion">
+      {{> componentes/boton-demo id="cierre"}}
+    </div>
+  </div>
+{{/componentes/diapositiva}}

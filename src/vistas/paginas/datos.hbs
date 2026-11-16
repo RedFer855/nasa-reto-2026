@@ -1,0 +1,30 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.datos.textos.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo" id="{{id}}-titulo">{{@root.datos.textos.titulo}}</h2>
+    <p class="cabecera-diapositiva__entradilla">{{@root.datos.textos.entradilla}}</p>
+  </header>
+
+  <div class="datos">
+    <div class="datos__agencias">
+      {{#each @root.datos.agencias}}
+        <section class="datos__agencia" aria-labelledby="datos-{{id}}">
+          <h3 class="datos__titulo-agencia" id="datos-{{id}}">{{nombre}}</h3>
+          <ul class="datos__lista">
+            {{#each recursos}}
+              <li class="recurso">
+                <span class="recurso__nombre">{{nombre}}</span>
+                <span class="recurso__descripcion">{{descripcion}}</span>
+                {{#if url}}<a class="recurso__enlace" href="{{url}}" rel="noopener">{{ruta}}</a>{{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/each}}
+    </div>
+
+    <div class="datos__pie">
+      <p class="datos__fuente">{{@root.datos.fuente}}</p>
+    </div>
+  </div>
+{{/componentes/diapositiva}}

@@ -1,0 +1,25 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.creditos.textos.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo" id="{{id}}-titulo">{{@root.creditos.textos.titulo}}</h2>
+    <p class="cabecera-diapositiva__entradilla">{{@root.creditos.textos.entradilla}}</p>
+  </header>
+
+  <div class="datos">
+    <div class="datos__agencias creditos__grupos">
+      {{#each @root.creditos.grupos}}
+        <section class="datos__agencia" aria-labelledby="creditos-{{id}}">
+          <h3 class="datos__titulo-agencia" id="creditos-{{id}}">{{titulo}}</h3>
+          <ul class="datos__lista">
+            {{#each items}}
+              <li class="recurso">
+                <span class="recurso__nombre">{{nombre}}</span>
+                <span class="recurso__descripcion">{{descripcion}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/each}}
+    </div>
+  </div>
+{{/componentes/diapositiva}}

@@ -1,0 +1,74 @@
+@tinta: #05060a;
+@papel: #f5f7ff;
+@cielo: #028efd;
+@cobalto: #0f63fc;
+@ultramar: #243cf8;
+@violeta: #521df9;
+@noche: mix(@violeta, @tinta, 14%);
+
+
+@tinta-suave: mix(@tinta, @papel, 74%);
+@papel-suave: mix(@papel, @tinta, 70%);
+
+
+@ancho-medio: ~'(min-width: 48em)';
+@ancho-grande: ~'(min-width: 64em)';
+@ancho-amplio: ~'(min-width: 75em)';
+@ancho-enorme: ~'(min-width: 80em)';
+@con-cursor: ~'(hover: hover) and (pointer: fine)';
+
+:root {
+  --tinta: @tinta;
+  --papel: @papel;
+  --cielo: @cielo;
+  --cobalto: @cobalto;
+  --ultramar: @ultramar;
+  --violeta: @violeta;
+  --noche: @noche;
+
+  --fuente-titulos: 'Unbounded', 'Arial Black', sans-serif;
+  --fuente-texto: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fuente-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --escala--1: 0.8125rem;
+  --escala-0: 1.0625rem;
+  --escala-1: 1.25rem;
+  --escala-2: clamp(1.25rem, calc(1rem + 1vw), 1.6rem);
+  --escala-3: clamp(1.9rem, calc(1.2rem + 3vw), 3.4rem);
+  --escala-4: clamp(2.4rem, calc(0.8rem + 5.2vw), 5.6rem);
+
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 0.75rem;
+  --espacio-4: 1rem;
+  --espacio-5: 1.5rem;
+  --espacio-6: 2rem;
+  --espacio-7: 3rem;
+  --espacio-8: 4.5rem;
+
+
+  --ritmo-seccion: var(--espacio-7);
+  --ritmo-bloques: var(--espacio-5);
+  --ritmo-interno: var(--espacio-2);
+  --ritmo-meta: var(--espacio-3);
+  --relleno-bloque: var(--espacio-5);
+
+  --margen-lateral: 16px;
+  --alto-encabezado: 64px;
+  --relleno-diapositiva: calc(var(--alto-encabezado) + var(--espacio-6));
+  --radio-chico: 6px;
+  --radio-medio: 14px;
+  --radio-pildora: 999px;
+
+  --curva-salida: cubic-bezier(0.22, 1, 0.36, 1);
+  --duracion-rapida: 160ms;
+  --duracion: 420ms;
+  --duracion-lenta: 900ms;
+
+  @media @ancho-medio {
+    --margen-lateral: 32px;
+  }
+  @media @ancho-grande {
+    --margen-lateral: 72px;
+  }
+}

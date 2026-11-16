@@ -1,0 +1,24 @@
+<header class="encabezado">
+  <a class="encabezado__marca" href="#{{@root.diapositivas.[0].id}}" aria-label="{{@root.sitio.equipo}} — {{@root.interfaz.volverAlInicio}}">
+    {{> componentes/logo tamano="chico"}}
+  </a>
+
+  <p class="encabezado__mundos" aria-label="{{@root.interfaz.mundoDelFondo}}">
+    {{#each @root.mundos}}
+      <span class="encabezado__mundo" data-etiqueta-mundo="{{id}}">{{etiqueta}}</span>
+    {{/each}}
+  </p>
+
+  <div class="encabezado__demo">
+    {{> componentes/boton-demo corto=true id="encabezado"}}
+  </div>
+
+  <a
+    class="encabezado__idioma"
+    href="{{@root.idioma.otro.ruta}}"
+    hreflang="{{@root.idioma.otro.codigo}}"
+    lang="{{@root.idioma.otro.codigo}}"
+    data-cambio-idioma
+    aria-label="{{@root.interfaz.cambiarIdioma}}"
+  >{{@root.idioma.otro.etiqueta}}</a>
+</header>

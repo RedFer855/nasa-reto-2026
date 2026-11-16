@@ -1,0 +1,61 @@
+.alcance {
+  &__cifras {
+    display: grid;
+    gap: var(--ritmo-bloques);
+
+    @media @ancho-medio {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    @media @ancho-amplio {
+      grid-template-columns: auto repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+
+.cifra {
+  .vidrio();
+  display: grid;
+  align-content: start;
+  gap: var(--ritmo-interno);
+  padding: var(--relleno-bloque);
+  border-radius: var(--radio-medio);
+  border-top: 2px solid var(--acento);
+
+  &__etiqueta {
+    .etiqueta-mono();
+    color: var(--acento);
+  }
+
+  &__valor {
+    font-family: var(--fuente-titulos);
+    font-size: var(--escala-3);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  &__detalle {
+    color: var(--texto-suave);
+  }
+
+  &__pie {
+    display: grid;
+    gap: var(--ritmo-interno);
+    margin-top: calc(var(--ritmo-meta) - var(--ritmo-interno));
+  }
+
+
+  &__fuente {
+    font-family: var(--fuente-mono);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    color: var(--texto-suave);
+    overflow-wrap: anywhere;
+    contain: inline-size;
+  }
+}

@@ -1,0 +1,73 @@
+.riel {
+  position: fixed;
+  top: 50%;
+  right: calc(var(--margen-lateral) / 2 - 6px);
+  z-index: 20;
+  transform: translateY(-50%);
+  color: var(--texto);
+
+  @media not @ancho-medio {
+    display: none;
+  }
+
+  &__lista {
+    display: grid;
+    gap: 2px;
+  }
+
+  &__enlace {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 44px;
+    height: 22px;
+    text-decoration: none;
+    border-radius: var(--radio-chico);
+  }
+
+  &__marca {
+    width: 14px;
+    height: 2px;
+    background: var(--texto-suave);
+    opacity: 0.6;
+    transition: width var(--duracion) var(--curva-salida), background-color var(--duracion), opacity var(--duracion);
+  }
+
+  &__etiqueta {
+    .etiqueta-mono();
+    position: absolute;
+    right: 54px;
+    padding: var(--espacio-1) var(--espacio-2);
+    white-space: nowrap;
+    color: var(--texto);
+    background: var(--superficie-fuerte);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-chico);
+    opacity: 0;
+    transform: translateX(6px);
+    pointer-events: none;
+    transition: opacity var(--duracion-rapida), transform var(--duracion-rapida) var(--curva-salida);
+  }
+
+  &__numero {
+    color: var(--acento);
+  }
+
+  &__enlace:hover &__etiqueta,
+  &__enlace:focus-visible &__etiqueta {
+    opacity: 1;
+    transform: none;
+  }
+
+  &__enlace:hover &__marca {
+    opacity: 1;
+    width: 22px;
+  }
+
+  &__enlace[aria-current] &__marca {
+    width: 34px;
+    background: var(--acento);
+    opacity: 1;
+  }
+}

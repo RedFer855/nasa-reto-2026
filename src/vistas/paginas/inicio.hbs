@@ -1,0 +1,23 @@
+{{#> componentes/diapositiva}}
+  <div class="inicio">
+    <div class="inicio__firma">
+      {{> componentes/logo tamano="grande"}}
+      {{> componentes/antetitulo texto=@root.inicio.antetitulo}}
+    </div>
+
+    <h1 class="inicio__titulo" id="{{id}}-titulo">
+      {{#each @root.inicio.lineasTitulo}}
+        <span class="inicio__linea" style="--i: {{@index}}">{{this}}</span>
+      {{/each}}
+      <span class="inicio__acento">{{@root.inicio.acento}}</span>
+    </h1>
+
+    <p class="inicio__entradilla">{{@root.inicio.entradilla}}</p>
+  </div>
+
+  <div class="inicio__acciones">
+    {{> componentes/boton-demo id="inicio"}}
+    {{> componentes/boton enlace="#reto" etiqueta=@root.inicio.accion variante="contorno" icono="↓"}}
+    <p class="inicio__pista">{{@root.inicio.pista}}</p>
+  </div>
+{{/componentes/diapositiva}}

@@ -1,0 +1,21 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.reto.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo" id="{{id}}-titulo">{{@root.reto.titulo}}</h2>
+  </header>
+
+  <div class="reto">
+    <div class="reto__oficial">
+      <p class="reto__descripcion">{{@root.reto.descripcion}}</p>
+      <figure class="reto__cita">
+        <blockquote lang="en"><p>{{@root.reto.tituloOficial}}</p></blockquote>
+        
+      </figure>
+    </div>
+
+    <section class="reto__objetivo" aria-labelledby="{{id}}-objetivo">
+      <h3 class="reto__subtitulo" id="{{id}}-objetivo">{{@root.reto.tituloObjetivo}}</h3>
+      <p class="reto__objetivo-texto">{{@root.reto.objetivo}}</p>
+    </section>
+  </div>
+{{/componentes/diapositiva}}

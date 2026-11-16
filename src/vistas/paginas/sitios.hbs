@@ -1,0 +1,30 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.sitios.textos.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo" id="{{id}}-titulo">{{@root.sitios.textos.titulo}}</h2>
+    <p class="cabecera-diapositiva__entradilla">{{@root.sitios.textos.entradilla}}</p>
+  </header>
+
+  <div class="sitios">
+    <div class="sitios__columnas">
+      <section class="sitios__grupo sitios__grupo--luna" aria-labelledby="{{id}}-luna">
+        <h3 class="sitios__cuerpo" id="{{id}}-luna">{{@root.sitios.textos.luna}} <span class="sitios__cuenta">{{@root.sitios.luna.length}}</span></h3>
+        <ol class="sitios__lista">
+          {{#each @root.sitios.luna}}
+            <li class="sitios__sitio" style="--i: {{@index}}"><span class="sitios__id">{{id}}</span> {{nombre}}</li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="sitios__grupo sitios__grupo--marte" aria-labelledby="{{id}}-marte">
+        <h3 class="sitios__cuerpo" id="{{id}}-marte">{{@root.sitios.textos.marte}} <span class="sitios__cuenta">{{@root.sitios.marte.length}}</span></h3>
+        <ol class="sitios__lista">
+          {{#each @root.sitios.marte}}
+            <li class="sitios__sitio" style="--i: {{@index}}"><span class="sitios__id">{{id}}</span> {{nombre}}</li>
+          {{/each}}
+        </ol>
+      </section>
+    </div>
+
+    <p class="sitios__fuente">{{@root.sitios.textos.fuente}}</p>
+  </div>
+{{/componentes/diapositiva}}

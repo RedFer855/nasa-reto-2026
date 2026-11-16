@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radio-chico);
+  transition: background-color var(--duracion) var(--curva-salida), padding var(--duracion) var(--curva-salida);
+
+  &__imagen {
+    width: auto;
+    height: 100%;
+  }
+
+  &--chico {
+    height: 30px;
+  }
+
+  &--grande {
+    height: clamp(64px, 9vw, 104px);
+  }
+}
+
+
+html[data-tono='oscuro'] .encabezado .logo,
+.diapositiva--oscuro .logo {
+  padding: 4px 8px;
+  background: var(--papel);
+}

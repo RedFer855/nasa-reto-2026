@@ -1,0 +1,73 @@
+.reto {
+  display: grid;
+  gap: var(--ritmo-bloques);
+
+  &__oficial {
+    display: grid;
+    gap: var(--ritmo-bloques);
+
+    @media @ancho-grande {
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      align-items: start;
+    }
+  }
+
+  &__descripcion {
+    max-width: 42rem;
+    font-size: var(--escala-1);
+    line-height: 1.5;
+  }
+
+  &__cita {
+    display: grid;
+    gap: var(--ritmo-meta);
+    padding-left: var(--espacio-5);
+    border-left: 3px solid var(--acento);
+
+    blockquote {
+      font-family: var(--fuente-titulos);
+      font-size: var(--escala-2);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+
+      p::before {
+        content: '“';
+      }
+
+      p::after {
+        content: '”';
+      }
+    }
+  }
+
+  &__fuente {
+    font-family: var(--fuente-mono);
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    overflow-wrap: anywhere;
+  }
+
+  &__objetivo {
+    display: grid;
+    gap: var(--ritmo-interno);
+    padding-top: var(--ritmo-bloques);
+    border-top: 1px solid var(--borde);
+  }
+
+  &__subtitulo {
+    .etiqueta-mono();
+    font-family: var(--fuente-mono);
+    font-weight: 400;
+    color: var(--acento);
+  }
+
+  &__objetivo-texto {
+    max-width: 52rem;
+    font-family: var(--fuente-titulos);
+    font-size: var(--escala-2);
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+}

@@ -1,0 +1,121 @@
+.metodo {
+  display: grid;
+  gap: var(--ritmo-bloques);
+
+  @media @ancho-grande {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+  }
+
+  &__pasos {
+    display: grid;
+    gap: var(--ritmo-bloques);
+    counter-reset: paso;
+  }
+
+
+  &__paso {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--ritmo-interno) var(--espacio-4);
+    counter-increment: paso;
+
+    &::before {
+      content: counter(paso, decimal-leading-zero);
+      grid-row: span 3;
+      font-family: var(--fuente-mono);
+      font-size: 0.875rem;
+      color: var(--acento);
+      padding-top: 0.2em;
+      border-top: 1px solid var(--borde-fuerte);
+    }
+  }
+
+  &__paso-titulo {
+    font-size: var(--escala-1);
+  }
+
+  &__paso-cuerpo {
+    color: var(--texto-suave);
+  }
+
+  &__etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1);
+    grid-column: 2;
+    margin-top: calc(var(--ritmo-meta) - var(--ritmo-interno));
+  }
+
+  &__etiqueta {
+    padding: 0 var(--espacio-2);
+    border: 1px solid var(--borde-fuerte);
+    border-radius: var(--radio-chico);
+    font-family: var(--fuente-mono);
+    font-size: 0.625rem;
+    color: var(--texto-suave);
+  }
+}
+
+
+.capas {
+  --separacion: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--espacio-5);
+
+  &__pila {
+    position: relative;
+    height: 320px;
+  }
+
+  &__placa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(220px, 60vw);
+    aspect-ratio: 1.5;
+    border: 1px solid fade(@cielo, 60%);
+    border-radius: 8px;
+    background:
+      repeating-radial-gradient(circle at 30% 40%, transparent 0 9px, fade(@cielo, 32%) 9px 10px),
+      fade(@ultramar, 12%);
+    transform: translate(-50%, -50%) translateY(calc((var(--i) - 3.5) * var(--separacion) * -1)) rotateX(58deg) rotateZ(-42deg);
+    transition: transform var(--duracion-lenta) var(--curva-salida);
+    transition-delay: calc(var(--i) * 40ms);
+
+    &:last-child {
+      border-style: dashed;
+      background: transparent;
+    }
+  }
+
+  &__etiquetas {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--espacio-2);
+  }
+
+  &__etiqueta {
+    .etiqueta-mono();
+    font-size: 0.6875rem;
+    color: var(--texto-suave);
+
+    &:last-child {
+      color: var(--acento);
+    }
+  }
+
+  &__leyenda {
+    grid-column: 1 / -1;
+    .etiqueta-mono();
+    font-size: 0.6875rem;
+    color: var(--texto-suave);
+  }
+}
+
+
+.diapositiva.esta-activa .capas {
+  --separacion: 30px;
+}

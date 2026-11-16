@@ -1,0 +1,72 @@
+.sitios {
+  display: grid;
+  gap: var(--ritmo-bloques);
+
+  &__columnas {
+    display: grid;
+    gap: var(--ritmo-bloques);
+
+    @media @ancho-medio {
+      grid-template-columns: 1fr 1.25fr;
+    }
+  }
+
+  &__grupo {
+    .vidrio();
+    padding: var(--relleno-bloque);
+    border-radius: var(--radio-medio);
+  }
+
+  &__cuerpo {
+    .etiqueta-mono();
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--ritmo-meta);
+    padding-bottom: var(--ritmo-interno);
+    border-bottom: 1px solid var(--borde-fuerte);
+    font-weight: 400;
+    color: var(--acento);
+  }
+
+  &__cuenta {
+    font-family: var(--fuente-titulos);
+    font-size: var(--escala-2);
+    letter-spacing: 0;
+    color: var(--texto);
+  }
+
+  &__lista {
+    display: grid;
+    gap: var(--espacio-1) var(--espacio-5);
+  }
+
+
+  &__grupo--marte &__lista {
+    @media @ancho-grande {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__sitio {
+    display: flex;
+    gap: var(--espacio-3);
+    align-items: baseline;
+    padding-block: 2px;
+    font-size: 0.9375rem;
+  }
+
+  &__id {
+    flex: none;
+    min-width: 3.4em;
+    font-family: var(--fuente-mono);
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+  }
+
+  &__fuente {
+    .etiqueta-mono();
+    font-size: 0.6875rem;
+    color: var(--texto-suave);
+  }
+}

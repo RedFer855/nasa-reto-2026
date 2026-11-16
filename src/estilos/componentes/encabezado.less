@@ -1,0 +1,109 @@
+.encabezado {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-4);
+  height: var(--alto-encabezado);
+  padding: 0 var(--margen-lateral);
+  color: var(--texto);
+  transition: color var(--duracion) var(--curva-salida);
+
+  @media not @ancho-medio {
+    gap: var(--espacio-3);
+  }
+
+  &__marca {
+    display: inline-flex;
+    flex: none;
+    border-radius: var(--radio-chico);
+  }
+
+
+  &__mundos {
+    .etiqueta-mono();
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: var(--espacio-2);
+    color: var(--texto-suave);
+
+    @media not @ancho-medio {
+      display: none;
+    }
+  }
+
+  &__mundo {
+    position: relative;
+    padding-block: var(--espacio-1);
+    transition: color var(--duracion) var(--curva-salida);
+
+    & + &::before {
+      content: '·';
+      margin-right: var(--espacio-2);
+      color: var(--texto-suave);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: var(--acento);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--duracion) var(--curva-salida);
+    }
+
+    & + &::after {
+      left: 1.1em;
+    }
+
+    &.es-actual {
+      color: var(--texto);
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__demo {
+    display: flex;
+    flex: none;
+
+    @media not @ancho-medio {
+      margin-left: auto;
+    }
+  }
+
+
+  &__idioma {
+    .etiqueta-mono();
+    .anillo-foco();
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 var(--espacio-3);
+    border: 1px solid var(--borde-fuerte);
+    border-radius: var(--radio-pildora);
+    color: var(--texto);
+    text-decoration: none;
+    transition:
+      color var(--duracion-rapida) var(--curva-salida),
+      background-color var(--duracion-rapida) var(--curva-salida),
+      border-color var(--duracion-rapida) var(--curva-salida);
+
+    &:hover {
+      border-color: var(--acento);
+      background-color: var(--acento);
+      color: var(--sobre-acento);
+    }
+  }
+}

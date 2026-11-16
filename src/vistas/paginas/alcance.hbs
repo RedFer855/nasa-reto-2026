@@ -1,0 +1,21 @@
+{{#> componentes/diapositiva}}
+  <header class="cabecera-diapositiva">
+    {{> componentes/antetitulo texto=@root.alcance.textos.antetitulo}}
+    <h2 class="cabecera-diapositiva__titulo" id="{{id}}-titulo">{{@root.alcance.textos.titulo}}</h2>
+    <p class="cabecera-diapositiva__entradilla">{{@root.alcance.textos.entradilla}}</p>
+  </header>
+
+  <div class="alcance">
+    <dl class="alcance__cifras">
+      {{#each @root.alcance.cifras}}
+        <div class="cifra cifra--{{id}}" style="--i: {{@index}}">
+          <dt class="cifra__etiqueta">{{etiqueta}}</dt>
+          <dd class="cifra__valor">{{texto}}</dd>
+          <dd class="cifra__detalle">{{detalle}}</dd>
+          <dd class="cifra__pie">
+          </dd>
+        </div>
+      {{/each}}
+    </dl>
+  </div>
+{{/componentes/diapositiva}}

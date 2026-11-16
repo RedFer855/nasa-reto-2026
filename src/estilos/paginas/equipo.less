@@ -1,0 +1,121 @@
+.equipo,
+.equipo__contenido {
+  display: grid;
+  justify-items: center;
+  gap: var(--ritmo-bloques);
+  text-align: center;
+}
+
+.equipo {
+  .logo--grande {
+    height: clamp(96px, 16vw, 168px);
+  }
+
+  &__entradilla {
+    max-width: 40rem;
+    font-size: var(--escala-1);
+    color: var(--texto-suave);
+  }
+
+  &__integrantes {
+
+    justify-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--ritmo-bloques);
+  }
+
+
+  &__sin-integrantes {
+    display: grid;
+    place-items: center;
+    min-width: min(100%, 22rem);
+    min-height: 7rem;
+    padding: var(--relleno-bloque);
+    border: 1px dashed var(--borde-fuerte);
+    border-radius: var(--radio-medio);
+    background: var(--superficie);
+    font-family: var(--fuente-mono);
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+  }
+
+  &__contacto {
+    padding: var(--espacio-2) var(--espacio-4);
+    border: 1px dashed var(--borde-fuerte);
+    border-radius: var(--radio-pildora);
+    font-family: var(--fuente-mono);
+    font-size: 0.8125rem;
+    color: var(--texto-suave);
+
+    a {
+      color: var(--acento);
+    }
+  }
+
+  &__pie {
+    .etiqueta-mono();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio-2) var(--espacio-5);
+    margin-top: var(--espacio-6);
+    font-size: 0.6875rem;
+    color: var(--texto-suave);
+  }
+}
+
+.integrante {
+  .vidrio();
+  display: grid;
+  gap: var(--ritmo-interno);
+  min-width: 15rem;
+  padding: var(--relleno-bloque);
+  border-radius: var(--radio-medio);
+
+  &__nombre {
+    font-family: var(--fuente-titulos);
+    font-size: var(--escala-1);
+    font-weight: 500;
+  }
+
+  &__rol {
+    font-size: 0.9375rem;
+  }
+
+  &__enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espacio-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: var(--ritmo-meta);
+  }
+
+  &__enlace {
+    .anillo-foco();
+    display: inline-flex;
+    color: var(--texto-suave);
+    transition: color var(--duracion-rapida) var(--curva-salida);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--acento-fuerte);
+    }
+  }
+
+  &__icono {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: currentColor;
+
+
+    &--trazo {
+      fill: none;
+      stroke: currentColor;
+    }
+  }
+}

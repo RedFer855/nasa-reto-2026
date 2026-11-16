@@ -1,0 +1,12 @@
+<nav class="riel" aria-label="{{@root.interfaz.diapositivas}}">
+  <ol class="riel__lista">
+    {{#each @root.diapositivas}}
+      <li class="riel__elemento">
+        <a class="riel__enlace" href="#{{id}}" data-ir-a="{{@index}}">
+          <span class="riel__marca" aria-hidden="true"></span>
+          <span class="riel__etiqueta"><span class="riel__numero">{{rellenar @index}}</span> {{etiqueta}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ol>
+</nav>

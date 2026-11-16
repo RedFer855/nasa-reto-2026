@@ -1,0 +1,70 @@
+.presentacion {
+  position: relative;
+  z-index: 1;
+}
+
+.diapositiva {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100svh;
+  padding: var(--relleno-diapositiva) var(--margen-lateral);
+  scroll-snap-align: start;
+  color: var(--texto);
+
+  &--claro {
+    .tono-claro();
+  }
+
+  &--oscuro {
+    .tono-oscuro();
+  }
+
+
+  &__interior {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ritmo-seccion);
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+
+.cabecera-diapositiva {
+  display: grid;
+  gap: var(--espacio-4);
+  max-width: 46rem;
+
+  &__titulo {
+    font-size: var(--escala-3);
+    max-width: 20ch;
+  }
+
+  &__entradilla {
+    font-size: var(--escala-1);
+    color: var(--texto-suave);
+    max-width: 38rem;
+  }
+}
+
+
+.con-movimiento({
+  .esta-listo .diapositiva:not(.fue-vista) .cabecera-diapositiva,
+  .esta-listo .diapositiva:not(.fue-vista) .cabecera-diapositiva ~ * {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .esta-listo .diapositiva .cabecera-diapositiva,
+  .esta-listo .diapositiva .cabecera-diapositiva ~ * {
+    transition:
+      opacity var(--duracion-lenta) var(--curva-salida),
+      transform var(--duracion-lenta) var(--curva-salida);
+  }
+
+  .esta-listo .diapositiva .cabecera-diapositiva ~ * {
+    transition-delay: 120ms;
+  }
+});

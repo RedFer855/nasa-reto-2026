@@ -1,0 +1,13 @@
+<a class="enlace-salto" href="#{{diapositivas.[0].id}}">{{interfaz.saltarAlContenido}}</a>
+
+<canvas class="terreno" data-terreno aria-hidden="true"></canvas>
+
+{{> componentes/encabezado}}
+{{> componentes/riel-progreso}}
+{{> componentes/sonda}}
+
+<main class="presentacion" data-presentacion>
+  {{#each diapositivas}}
+    {{> (lookup . "vista")}}
+  {{/each}}
+</main>
